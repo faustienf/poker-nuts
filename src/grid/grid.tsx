@@ -7,16 +7,20 @@ export const Grid: FC = () => {
   return (
     <table className="grid">
       <tbody>
-        {cardsIterator.map((firstCard) => (
+        {cardsIterator.map((firstCard, rowIndex) => (
           <tr key={firstCard}>
-            {cardsIterator.map((secondCard) => (
+            {cardsIterator.map((secondCard, colIndex) => (
               <td 
                 key={`${firstCard}${secondCard}`}
                 className="grid-cell"
               >
-                <GridButton>
-                  {firstCard}{secondCard}
-                </GridButton>
+                <GridButton
+                  mode={rowIndex > colIndex ? 'offsuited' : 'suited'}
+                  hand={rowIndex > colIndex 
+                    ? [secondCard, firstCard]
+                    : [firstCard, secondCard]
+                  }
+                />
               </td>
             ))}
           </tr>
