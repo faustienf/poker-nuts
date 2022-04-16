@@ -10,16 +10,15 @@ export const Grid: FC = () => {
         {cardsIterator.map((firstCard, rowIndex) => (
           <tr key={firstCard}>
             {cardsIterator.map((secondCard, colIndex) => (
-              <td 
+              <td
                 key={`${firstCard}${secondCard}`}
                 className="grid-cell"
               >
                 <GridButton
                   mode={rowIndex > colIndex ? 'offsuited' : 'suited'}
-                  hand={rowIndex > colIndex 
+                  hand={rowIndex > colIndex
                     ? [secondCard, firstCard]
-                    : [firstCard, secondCard]
-                  }
+                    : [firstCard, secondCard]}
                 />
               </td>
             ))}

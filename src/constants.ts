@@ -13,5 +13,5 @@ export const cardsIterator = [
   '5',
   '4',
   '3',
-  '2'
+  '2',
 ];

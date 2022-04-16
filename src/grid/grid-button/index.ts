@@ -1,1 +1,1 @@
-export {GridButton} from './grid-button';
+export { GridButton } from './grid-button';
